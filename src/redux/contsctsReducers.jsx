@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchContacts, addContact, deleteContact } from './contactsSlice';
+import { fetchContacts, addContact, deleteContact } from './operations';
 import axios from 'axios';
 axios.defaults.baseURL = 'https://64b72deedf0839c97e166fe4.mockapi.io/api/v1/';
 
@@ -51,28 +51,3 @@ const contactsSlice = createSlice({
 const { reducer: contactsReducer } = contactsSlice;
 export default contactsReducer;
 
-// import { combineReducers, createReducer, createSlice } from '@reduxjs/toolkit';
-// import * as contactActions from './contactActions';
-
-// import { fetchContacts } from './contactsSlice';
-
-// const items = createReducer([], {
-//   [fetchContacts.fulfilled]: (_, action) => action.payload,
-// });
-
-// const isLoading = createReducer(false, {
-//   [fetchContacts.pending]: () => true,
-//   [fetchContacts.fulfilled]: () => false,
-//   [fetchContacts.rejected]: () => false,
-// });
-
-// const error = createReducer(null, {
-//     [fetchContacts.rejected]: (_, action) => action.payload,
-//     [fetchContacts.pending]:()=>null,
-// })
-
-// export default combineReducers({
-//     items,
-//     isLoading,
-//     error,
-// })
